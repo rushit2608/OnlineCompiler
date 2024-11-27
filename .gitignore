@@ -7,8 +7,6 @@
 # Django migrations
 */migrations/
 
-
-
 # Build artifacts
 *.log
 *.pot
