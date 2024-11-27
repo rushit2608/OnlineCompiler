@@ -1,0 +1,21 @@
+# Environment variable file
+.env
+
+# Visual Studio Code
+.vscode/
+
+# Django migrations
+*/migrations/
+
+
+
+# Build artifacts
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+
+# Static and media files
+staticfiles/
+media/
