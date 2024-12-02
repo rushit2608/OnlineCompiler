@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from common_users.views import LanguageView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('rest/',include('rest_api_app.urls'))
+    path('rest/',include('rest_api_app.urls')),
+    path('language/<str:type>',LanguageView,name="language-view")
 ]
 
 

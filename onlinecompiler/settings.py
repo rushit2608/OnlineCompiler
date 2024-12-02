@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5m83bd&&u2*wbfh0u2qevzqgs!t0rm7^)+on=ric9^%&&8xm_g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'common_users',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'django.contrib.sites',
+    # 'common_users',
+    'common_utils',
+    'rest_api_app',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +76,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'onlinecompiler.wsgi.application'
 
+SITE_ID = 1
+
+AUTH_USER_MODEL = 'common_users.Users'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

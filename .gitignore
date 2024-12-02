@@ -17,3 +17,6 @@
 # Static and media files
 staticfiles/
 media/
+
+#node_modules
+frontend/compiler/node_modules
