@@ -44,9 +44,13 @@ INSTALLED_APPS = [
     # 'common_users',
     'common_utils',
     'rest_api_app',
+    'channels',
+    'asgi_websocket_app',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -57,6 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'onlinecompiler.urls'
+
+CORS_ALLOW_ALL_ORIGINS = True 
 
 TEMPLATES = [
     {
@@ -75,6 +81,19 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'onlinecompiler.wsgi.application'
+
+ASGI_APPLICATION = 'onlinecompiler.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
+
+
 
 SITE_ID = 1
 
